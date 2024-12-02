@@ -1,0 +1,34 @@
+---
+title: "Final Project"
+author: "Danielle McMillion"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r, here-i-am, include = FALSE}
+here::i_am(
+  "Final_Project_Report.Rmd"
+)
+```
+
+Healthcare Payments Data (HPD) Healthcare Measures is a dataset that contains data in three main categories: Health Conditions, Utilization, and Demographics.  It includes the prevalence of long-term illnesses, healthcare usage rates, and demographic information, such as age and health coverage. Furthermore, measures are grouped in various ways, including year, region, and payer type. The objectives for this analysis will to compare payer type, region, year, health coverage, and long-term illnesses to identify possible trends in payer type and health coverage regarding region and long-term illness.
+
+
+## Table 
+This table displays the calculated average prevalence of each conditions for Medi-Cal patients across different age bands.
+
+```{r, table1, echo = FALSE, message = FALSE}
+library(here)
+prev_table <- readRDS(here("Output", "prevalence_table.rds"))
+
+knitr::kable(prev_table)
+```
+
+## Figure
+This heatmap visualizes the prevalence rates of various chronic health conditions across different age bands for California Medi-Cal patients. Each row represents a specific health condition, such as Atrial Fibrillation, Alzheimer's Disease, or Heart Attack. The columns represent distinct age bands, such as 18-34, 35-54, 55-74, and 75+. The color intensity of each tile reflects the Prevalence rate, with darker shades indicating higher prevalence rates and lighter shades indicating lower rates.
+
+``` {r, echo = FALSE, message = FALSE, warning=FALSE}
+heat_map_img <- here("Output", "heatmap_age_band_conditions.png")
+
+knitr::include_graphics(heat_map_img)
+```
