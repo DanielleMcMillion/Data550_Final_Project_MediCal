@@ -7,7 +7,7 @@ library(knitr)
 here::i_am("Code/process_data.R")
 
 # Read the data
-data <- read_csv(here("measures_data_2024.csv"))
+data <- read_csv(here("Data/measures_data_2024.csv"))
 
 # Filter for specific measure_ids
 selected_ids <- c(7, 8, 9, 10, 11, 12, 14, 15, 17, 18, 19, 20, 21, 
