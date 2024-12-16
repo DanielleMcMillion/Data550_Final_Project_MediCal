@@ -25,7 +25,7 @@ The dataset used in this project contains information on:
 
 ## Packages
 
-To run the project, you will need the following packages in R:
+To generate the report, you will need the following packages in R:
 
 ```r
 install.packages(c("here", "dplyr", "ggplot2", "tidyr", "rmarkdown", "knitr", "renv"))
@@ -39,11 +39,26 @@ install.packages(c("here", "dplyr", "ggplot2", "tidyr", "rmarkdown", "knitr", "r
 - `Final_Project_Report.Rmd`: The RMarkdown file containing the analysis report, including tables, figures, and conclusions.
 - `Output/`: Folder where outputs are stored.
 
-## Running the Project
+## Generating the Report
 
-1. Clone or download the repository to your local machine.
+1. Clone or download the repository to your local machine:
+```
+git clone https://github.com/DanielleMcMillion/Data550_Final_Project_MediCal.git
+```
+
 2. Open the RStudio project or R console and set the working directory to the root of the project.
 3. Use the provided `Makefile` to automate the process
+
+```
+make run
+```
+
+#### **Running the Docker Image**
+To generate the outputs (heatmap, table, and final report) using Docker:
+
+```
+docker run --rm -v $(pwd):/final_project_mcmillion danimillionemory/final_project
+```
 
 ## Output
 

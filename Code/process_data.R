@@ -3,6 +3,7 @@ library(dplyr)
 library(readr)
 library(here)
 library(knitr)
+library(renv)
 
 here::i_am("Code/process_data.R")
 
